@@ -1,6 +1,7 @@
-# Write a Python function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument
-def fact(n):
-    if n==1:
-        return 1
-    return n*fact(n-1)
-print(fact(int(input())))
+#Write a Python function to check whether a number is in a given range
+def range(n, a):
+    if n in range(a):
+        print('Yes')
+    else:
+        print('No')
+range(input(),input())

@@ -1,10 +1,6 @@
-#Write a Python program to reverse a string
-def revfunc(s):
-    res=''
-    i=len(s)
-    while(i>0):
-        res+=s[i-1]
-        i-=1
-    return res
-
-print(revfunc(input()))
+# Write a Python function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument
+def fact(n):
+    if n==1:
+        return 1
+    return n*fact(n-1)
+print(fact(int(input())))
