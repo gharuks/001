@@ -1,7 +1,6 @@
 import re
-with open('raw.txt', 'r') as f:
-    text = f.read()
-bin_pattern = re.compile(r'\d{12}')
-result = bin_pattern.findall(text)
-for i in result:
-    print(result(i))
+with open('input.txt', 'r', encoding='utf-8') as s:
+    txt = s.read()
+noc_pattern = re.compile('([A-Za-z]{3,} ([A-Za-z]{3,})?)')
+result = noc_pattern.findall(txt)
+print(result)

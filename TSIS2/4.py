@@ -5,8 +5,10 @@ class Solution(object):
         :type gain: List[int]
         :rtype: int
         """
-        a=[]
+        a=0
+        l=[0]
         for x in gain:
-            a.append(gain[x])
-        a.sort()
-        return(a[-1])
+            a+=x
+            l.append(a)
+        l.sort()
+        return(l[-1])
