@@ -5,7 +5,6 @@ def pasctr(n):
     for i in range(1,n+1):
         print(s)
         s=[a+b for a,b in zip(s+k, k+s)]
-    return n>=1
 pasctr(int(input()))
 # def tri(x):
 #     old = [1]
