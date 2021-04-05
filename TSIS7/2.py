@@ -91,32 +91,32 @@ while running:
       elif b%1==0.5:
           if b==0.5:
             text=font.render("π", True, BLACK)
-            screen.blit(text, (105+dis, 525))
+            screen.blit(text, (105+dis, 515))
             l=font.render('__', True, BLACK)
-            screen.blit(l, (100+dis, 525))
+            screen.blit(l, (100+dis, 515))
             u=font.render('2', True, BLACK)
-            screen.blit(u, (105+dis, 545)) 
+            screen.blit(u, (105+dis, 535)) 
           elif b==-0.5:
             text=font.render("-π", True, BLACK)
-            screen.blit(text, (100+dis, 525))
+            screen.blit(text, (100+dis, 515))
             l=font.render('__', True, BLACK)
-            screen.blit(l, (100+dis, 525))
+            screen.blit(l, (100+dis, 515))
             u=font.render('2', True, BLACK)
-            screen.blit(u, (103+dis, 545))
+            screen.blit(u, (105+dis, 535))
           elif b<0:
             text=font.render(str(int(b*2))+"π", True, BLACK)
-            screen.blit(text, (93+dis, 525))
+            screen.blit(text, (93+dis, 515))
             l=font.render('__', True, BLACK)
-            screen.blit(l, (99+dis, 525))
+            screen.blit(l, (99+dis, 515))
             u=font.render('2', True, BLACK)
-            screen.blit(u, (103+dis, 545))
+            screen.blit(u, (103+dis, 535))
           elif b>0:
             text=font.render(str(int(b*2))+"π", True, BLACK)
-            screen.blit(text, (100+dis, 525))  
+            screen.blit(text, (100+dis, 515))  
             l=font.render('__', True, BLACK)
-            screen.blit(l, (100+dis, 525))
+            screen.blit(l, (100+dis, 515))
             u=font.render('2', True, BLACK)
-            screen.blit(u, (103+dis, 545))       
+            screen.blit(u, (103+dis, 535))       
       dis+=48
       b+=0.5
   text=font.render('0', True, BLACK)
@@ -129,9 +129,21 @@ while running:
     t=font.render(str(-3+dis), True, BLACK)
     screen.blit(t, (113+dis*80, 327))
   #graphofcos
+  # x=-3*math.pi
+  # x0=112
+  # while(x0<=688):
+  #   pygame.draw.aalines(screen, BLUE, False, [(x0, 300-192*math.cos(x)),(x0, 300-192*math.cos(x))])
+  #   x0+=1/10.4
+  #   x+=math.pi/1000
   for x in range(112,688,3):
     pygame.draw.aalines(screen, BLUE, False, [(x, 300+192*math.cos((x-112)/96*math.pi)),(x+1, 300+192*math.cos((x-111)/96*math.pi))])
  #graphofsin
+  # x=-3*math.pi
+  # x0=112
+  # while x0<=688:
+  #     pygame.draw.aalines(screen, RED, False, [(x0, 300-192*math.sin(x)),(x0+1/10.4, 300-192*math.sin(x))])
+  #     x0+=1/10.4
+  #     x+=math.pi/1000 
   for i in range(112,688):
     pygame.draw.aalines(screen, RED, False, [(i, 300+192*math.sin((i-112)/96*math.pi)),(i+1, 300+192*math.sin((i-111)/96*math.pi))])
   pygame.display.flip()
