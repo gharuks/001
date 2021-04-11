@@ -140,6 +140,8 @@ while True:
           sys.exit()        
     if pygame.sprite.spritecollideany(P1, coins_):
           COINS+=1
+          for entity in coins_:
+                entity.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
     pygame.display.update()
     FramePerSec.tick(FPS)
     
