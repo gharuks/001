@@ -4,20 +4,16 @@ from pygame.locals import *
 windowSurface = pygame.display.set_mode((500, 500))
 clock = pygame.time.Clock()
 GREEN = (0, 255, 0)
-GRAY = (197, 197, 197)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
-DARK_GRAY = (107, 104, 99)
 PINK = (249, 57, 255)
-LIGHT_BLUE = (54, 207, 241)
 YELLOW = (255, 241, 73)
 ORANGE = (252, 155, 64)
 PURPLE = (167, 0, 238)
 DARK_GREEN = (58, 158, 73)
 WHITE = (255, 255, 255)
 BROWN = (85, 46, 46)
-PRETTY_BLUE = (0, 238, 195)
 
 pygame.init()
 ## font setup
@@ -103,15 +99,8 @@ while True:
         if event.type == pygame.MOUSEMOTION:
             mouse_pos = pygame.mouse.get_pos()
             if draw == True and mouse_pos[1] > 100:
-                # pygame.draw.line(windowSurface, brush_color, prev, mouse_pos, 2*brush_size)
                 drawLine(windowSurface, prev, mouse_pos, brush_size, brush_color)
             prev = mouse_pos
-    # Drawing dot when mousebuttondown
-    # mouse_pos = pygame.mouse.get_pos()
-    # if draw == True and mouse_pos[1] > 100:
-    #     pygame.draw.line(windowSurface, brush_color, prev, mouse_pos, brush_size)
-    #     save_flag = False
-    # collision detection for COLOR
     if draw == True:    
         if green_rect.collidepoint(mouse_pos):
             brush_color = GREEN
@@ -139,14 +128,12 @@ while True:
             pygame.draw.rect(windowSurface, WHITE, screen_rect)
             
     pygame.draw.rect(windowSurface, PURPLE, menu_rect)
-
     pygame.draw.rect(windowSurface, WHITE, clear_rect)
     windowSurface.blit(clear_text, (13, 50))
     
-    ## Blit the save rect
     pygame.draw.rect(windowSurface, WHITE, save_rect)
     windowSurface.blit(save_text, (13, 25))
-## Collision detection for SAVE
+
     if draw == True and save_flag == False:
         if save_rect.collidepoint(mouse_pos):
             print("File has been saved :P")
@@ -161,8 +148,7 @@ while True:
                 save_flag = True
                 
             pygame.image.save(save_surface, "TSIS9" + str(file_number) + ".png")
-        
- ## collision detectin for BRUSH SIZE
+
     if draw == True:
         if thin_brush.collidepoint(mouse_pos):
             brush_size = 1
@@ -173,7 +159,6 @@ while True:
         if supa_brush.collidepoint(mouse_pos):
             brush_size = 10
     
-    # rect for brush_color
     pygame.draw.rect(windowSurface, GREEN, green_rect)
     if brush_color == GREEN:
         border = 3
@@ -251,9 +236,6 @@ while True:
         border = 1
     pygame.draw.rect(windowSurface, BLACK, brown_rect, border)
     
-    
-    
-    #### RECT FOR ERASER
     windowSurface.blit(eraser, eraser_rect)
     if brush_color == WHITE:
         border = 3
@@ -261,7 +243,6 @@ while True:
         border = 1
     pygame.draw.rect(windowSurface, WHITE, eraser_rect, border)
 
-    # Rect for brush size
     if brush_size == 1:
         brush_border = 3
     else:
