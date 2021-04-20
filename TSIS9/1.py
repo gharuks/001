@@ -268,7 +268,6 @@ while True:
         brush_border = 1
     pygame.draw.line(windowSurface, BLACK, (200, 20), (285, 20), 2)
     pygame.draw.rect(windowSurface, BLACK, thin_brush, brush_border)
-    pygame.draw.rect(windowSurface, BLACK, thin_brush, brush_border)
     
     if brush_size == 3:
         brush_border = 3
@@ -276,14 +275,12 @@ while True:
         brush_border = 1
     pygame.draw.line(windowSurface, BLACK, (200, 30), (285, 30), 6)
     pygame.draw.rect(windowSurface, BLACK, medium_brush, brush_border)
-    pygame.draw.rect(windowSurface, BLACK, medium_brush, brush_border)
     
     if brush_size == 5:
         brush_border = 3
     else:
         brush_border = 1
     pygame.draw.line(windowSurface, BLACK, (200, 43), (285, 43), 10)
-    pygame.draw.rect(windowSurface, BLACK, thick_brush, 1)
     pygame.draw.rect(windowSurface, BLACK, thick_brush, brush_border)
     
     if brush_size == 10:
@@ -291,7 +288,6 @@ while True:
     else:
         brush_border = 1
     pygame.draw.line(windowSurface, BLACK, (200, 63), (285, 63), 20)
-    pygame.draw.rect(windowSurface, BLACK, supa_brush, brush_border)
     pygame.draw.rect(windowSurface, BLACK, supa_brush, brush_border)
 
     pygame.display.update()
