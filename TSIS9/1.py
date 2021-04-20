@@ -37,17 +37,13 @@ orange_rect = pygame.Rect(350, 45, 20, 20)
 purple_rect = pygame.Rect(400, 45, 20, 20)
 dark_green_rect = pygame.Rect(450, 20, 20, 20)
 brown_rect = pygame.Rect(425, 45, 20, 20)
-
-
 clear_rect = pygame.Rect(5, 50, 90, 25)
-
 eraser_rect = pygame.Rect(125, 20, 40, 40)
 
 thin_brush = pygame.Rect(200, 20, 85, 2)
 medium_brush = pygame.Rect(200, 27, 85, 6)
 thick_brush = pygame.Rect(200, 38, 85, 10)
 supa_brush = pygame.Rect(200, 53, 85, 20)
-
 save_rect = pygame.Rect(5, 20, 90, 25)
 save_flag = False
 file_number = 1
@@ -85,11 +81,9 @@ while True:
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
-            sys.exit()
         if event.type == KEYDOWN:
             if event.key == K_ESCAPE:
                 pygame.quit()
-                sys.exit()
         if event.type == MOUSEBUTTONDOWN:
             prev = pygame.mouse.get_pos()
             draw = True
@@ -146,7 +140,6 @@ while True:
                     save_flag = True
             except IOError:
                 save_flag = True
-                
             pygame.image.save(save_surface, "TSIS9" + str(file_number) + ".png")
 
     if draw == True:
