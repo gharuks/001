@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Desktop\\Aruzhan\\git_tutorial"
+		},
+		{
+			"path": "..\\..\\PP2_works"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"files.associations": {
+			"stack": "cpp",
+			"string": "cpp",
+			"iostream": "cpp"
+		}
+	}
+}
